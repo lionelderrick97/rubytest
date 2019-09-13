@@ -1,26 +1,12 @@
-<!-- <h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
- -->
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>Sample App</title>
-</head>
+<nav style="padding-bottom:155px;">
+    <div class="nav justify-content-center mt-5 py-4"><b>
+            <h1><%= I18n.t 'wel'%></h1>
 
-<body>
-
-    <nav style="padding-bottom:155px;">
-        <div class="nav justify-content-center mt-5 py-4"><b>
-                <h1><%= I18n.t 'wel'%></h1>
-
-            </b>
-        </div>
-        <p class="nav justify-content-center"><%= I18n.t 'this'%></p>
-        <div class="nav justify-content-center">
-            <button type="button" class="btn btn-light mt-5" style="border-radius: 50px; font-size: 15px; border: 2px solid;background-color:#e8b912; color: white;"><%= link_to  I18n.t 'sign', new_user_registration_path %></button>
-        </div>
-    </nav>
-</body>
-
-</html>
+        </b>
+    </div>
+    <p class="nav justify-content-center"><%= I18n.t 'this'%></p>
+    <div class="nav justify-content-center">
+        <button type="button" class="btn btn-light mt-5" style="border-radius: 50px; font-size: 15px; border: 2px solid;background-color:#e8b912; color: white;"><%= link_to  I18n.t 'sign', new_user_registration_path %></button>
+    </div>
+</nav>
