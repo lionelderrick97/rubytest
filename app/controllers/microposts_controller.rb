@@ -1,11 +1,11 @@
 class MicropostsController < ApplicationController
   before_action :set_micropost, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /microposts
   # GET /microposts.json
   def index
     @microposts = Micropost.all
-    p current_user
   end
 
   # GET /microposts/1
@@ -16,7 +16,6 @@ class MicropostsController < ApplicationController
   # GET /microposts/new
   def new
     @micropost = Micropost.new
-  
   end
 
   # GET /microposts/1/edit
