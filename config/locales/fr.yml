@@ -29,8 +29,13 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
-  wel: "Welcome to the example application"
-  this: "This is the home page of the Ruby on Rails tutorial example application."
-  sign: "sign up now"
+fr:
+  hello: "Bonjour tout le monde"
+  wel: "Bienvenue dans l'application exemple"
+  this: "Ceci est la page d'accueil de l'application d'exemple du didacticiel Ruby on Rails."
+  sign: "Inscrivez-vous maintenant"
+  help: "Aide"
+  si: "connexion"
+  sig: "Inscrivez-vous"
+  cont: "Contenu"
+  us: "Utilisateur"

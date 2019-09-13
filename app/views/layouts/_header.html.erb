@@ -1,0 +1,67 @@
+<style>
+#container {
+    position: relative;
+    height: ;
+    width: ;
+    overflow: hidden;
+    background-color: #e8b912;
+}
+
+#container:before {
+    content: '';
+    position: absolute;
+    left: -35%;
+    width: 100%;
+    height: 250%;
+    background-color: rgb(255, 255, 255);
+    /* fallback */
+    background-color: #3b5998;
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(20deg);
+}
+</style>
+<header style="border-bottom: 2px solid;background-color:" id="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-7">
+                <h3 class="navbar" style="color: black;">Sample App</h3>
+            </div>
+            <ul class=" nav justify-content-end navbar ">
+                <li class="px-3 pt-4" style="color: black;">
+                    <%= link_to 'Micropost',microposts_path %>
+                </li>
+                <li class="px-3 ">
+                </li>
+                <li class="px-3 pt-4">
+                    <%= link_to 'Help',static_pages_help_path %>
+                </li>
+                <% if user_signed_in? %>
+                <li class="px-3 pt-4">
+                    <%= link_to 'Edit account', edit_user_registration_path %>
+                </li>
+                <li class="px-3">
+                    <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
+                </li>
+                <% else %>
+                <li class="px-3 pt-4">
+                    <%= link_to 'Sign in', new_user_session_path %>
+                </li>
+                <li class="px-3 pt-4">
+                    <%= link_to 'Sign up', new_user_registration_path %>
+                </li>
+                <% end %>
+                <% if user_signed_in? %>
+                <li>
+                    <%= link_to 'Microposts', microposts_path %>
+                </li>
+                <% end %>
+            </ul>
+            <p class="pt-2">
+                <%= link_to "fr", static_pages_home_path(locale: "fr") %>
+                <%= link_to "en", static_pages_home_path(locale: "en") %>
+            </p>
+        </div>
+    </div>
+</header>

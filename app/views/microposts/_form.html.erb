@@ -1,27 +1,33 @@
-<%= form_with(model: micropost, local: true) do |form| %>
-  <% if micropost.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
-
-      <ul>
-      <% micropost.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="card d-flex justify-content-center" style="width: 18rem;background-color:#3B5998;">
+    <h5 class="card-title d-flex justify-content-center pt-2">Micropost</h5>
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body ">
+        <%= form_with(model: micropost, local: true) do |form| %>
+        <% if micropost.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+            <ul>
+                <% micropost.errors.full_messages.each do |message| %>
+                <li>
+                    <%= message %>
+                </li>
+                <% end %>
+            </ul>
+        </div>
+        <% end %>
+        <div class="field">
+            <%= form.label :content %>
+            <%= form.text_area :content, class: "form-control" %>
+        </div>
+        
+        <div class="field">
+            <%= form.label :image %>
+            <%= form.file_field :image %>
+        </div>
+        <div class="actions btn d-flex justify-content-center pb-2">
+            <%= form.submit %>
+        </div>
+        <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
